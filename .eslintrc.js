@@ -3,7 +3,8 @@ module.exports = {
   env: {
     browser: true,
     commonjs: true,
-    es2021: true
+    es2021: true,
+    'vue/setup-compiler-macros': true
   },
   parser: 'vue-eslint-parser', // 指定如何解析语法
   extends: [
