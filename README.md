@@ -1,23 +1,12 @@
 # Vue 3 + Vite
 
-This template should help get you started developing with Vue 3 in Vite. The
-template uses Vue 3 `<script setup>` SFCs, check out the
-[script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup)
-to learn more.
-
-## Recommended IDE Setup
-
-- [VSCode](https://code.visualstudio.com/) +
-  [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
-
-# Vue 3 + Vite
-
 ### 目录结构
 
 ### 初始化项目
 
 ```
-yarn create vite
+npm i pnpm -g
+pnpm create vite
 ```
 
 ### 配置 eslint + prettier
@@ -26,7 +15,7 @@ yarn create vite
 - 安装以下依赖
 
 ```
-yarn add eslint eslint-plugin-vue eslint-config-prettier eslint-plugin-prettier prettier -D
+npm i eslint eslint-plugin-vue eslint-config-prettier eslint-plugin-prettier prettier -D
 ```
 
 `新建.eslintrc.js`
@@ -95,7 +84,7 @@ git config --global core.autocrlf false
 - 安装以下依赖
 
 ```
-yarn add stylelint stylelint-config-standard stylelint-order -D
+npm i stylelint stylelint-config-standard stylelint-order -D
 ```
 
 `新建.stylelintrc.js`
@@ -168,8 +157,8 @@ Vite 也同时提供了对 .scss, .sass, .less, .styl 和 .stylus 文件的内�
 要为它们安装特定的 Vite 插件，但必须安装相应的预处理器依赖：
 
 ```
-// 如果是用的是单文件组件，可以通过 <style lang="less">自动开启。
-yarn add less -D
+// 如果是用的是单文件组件，可以通过 <style lang="scss">自动开启。
+npm i sass -D
 ```
 
 ### 配置 Element Plus
@@ -177,10 +166,10 @@ yarn add less -D
 [自动按需导入 Element Plus](https://element-plus.gitee.io/zh-CN/guide/quickstart.html)
 
 ```
-yarn add element-plus
+npm i element-plus
 
 // 自动按需导入
-yarn add unplugin-vue-components vite-plugin-style-import -D
+npm i unplugin-vue-components vite-plugin-style-import -D
 
 // 修改vite.config.js
 // vite.config.ts
