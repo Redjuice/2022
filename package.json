@@ -37,7 +37,7 @@
     "vite": "^2.8.0"
   },
   "lint-staged": {
-    "*.{js,vue}": [
+    "*.{js,vue,scss}": [
       "npm run format:all",
       "git add ."
     ]
