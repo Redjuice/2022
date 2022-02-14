@@ -198,3 +198,194 @@ export default {
   ],
 }
 ```
+
+### 配置 husky + lint-staged
+
+[掘金: 配置 husky 和 lint-staged](https://juejin.cn/post/6982876819292684318#heading-1)
+[知乎: husky 使用总结](https://zhuanlan.zhihu.com/p/366786798)
+
+`执行以下操作`
+
+```
+// && 连接符在vscode中会报错，建议在windows的powershell执行
+npx husky-init && npm install
+
+pnpm i lint-staged -D
+```
+
+`修改package.json`
+
+```
+// package.json
+"scripts": {
+  ...,
+  "lint-staged": "lint-staged"
+},
+"lint-staged": {
+  "*.{js,vue}": [
+    "npm run format:all",
+    "git add ."
+  ]
+},
+```
+
+`修改husky/pre-commit`
+
+```
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+npm run lint-staged
+```
+
+### 配置 commitlint
+
+[简书: 代码提交规范 husky + commitlint + lint-staged](https://www.jianshu.com/p/6653f467e993)
+
+`安装依赖`
+
+```
+pnpm i @commitlint/cli @commitlint/config-conventional -D
+```
+
+`新建commitlint.config.js或.commitlintrc.js`
+
+```
+// 具体查看.commitlintrc.js
+```
+
+`新建.husky/commit-msg`
+
+```
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+npx --no-install commitlint --edit $1
+```
+
+`或者修改.husky/pre-commit`
+
+```
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+npm run lint-staged
+npx --no-install commitlint --edit $1
+```
+
+### 配置 commitizen
+
+```
+// 全局安装
+// 它会提供 git cz 命令替代我们的 git commit命令，帮助我们更加方便生成符合规范的 commit message。
+npm install -g commitizen
+
+// 项目中安装
+// commitizen 的首选适配器
+pnpm i cz-conventional-changelog -D
+```
+
+`修改package.json`
+
+```
+// package.json
+"scripts": {
+  ...,
+  "commit": "git cz"
+},
+"config": {
+  "commitizen": {
+    "path": "node_modules/cz-conventional-changelog"
+  }
+}
+```
+
+`执行 git cz 或者 yarn commit 提交代码`
+
+### 配置 自定义 commitizen 提交规范(cz-customizable 适配器)
+
+`安装依赖`
+
+```
+pnpm i cz-customizable -D
+```
+
+`修改package.json`
+
+```
+// package.json
+"scripts": {
+  ...,
+  "commit": "git cz"
+},
+"config": {
+  "commitizen": {
+    "path": "node_modules/cz-customizable"
+  }
+}
+```
+
+`新建.cz-config.js`
+
+```
+module.exports = {
+  types: [
+    { value: 'init', name: '🎉init: 初始提交' },
+    { value: 'feat', name: '✨feat: 增加新功能' },
+    { value: 'ui', name: '🌻ui: 更新UI' },
+    { value: 'fix', name: '🐛fix: 修复bug' },
+    { value: 'perf', name: '⚡️perf: 性能优化' },
+    { value: 'refactor', name: '♻️refactor: 代码重构' },
+    { value: 'chore', name: '🛠️chore: 更改配置文件' },
+    { value: 'add', name: '➕add: 添加依赖' },
+    { value: 'del', name: '❌del: 删除代码/文件' },
+    { value: 'style', name: '🎨style: 样式修改不影响逻辑' },
+    { value: 'docs', name: '📝docs: 修改文档' },
+    { value: 'test', name: '✅test: 增加测试' },
+    { value: 'revert', name: '⏪revert: 版本回退' },
+    { value: 'release', name: '⌨️release: 发布' },
+    { value: 'deploy', name: '👷deploy: 部署' }
+  ],
+  messages: {
+    type: '选择更改类型:\n',
+    subject: '简短描述:\n',
+    body: '详细描述. 使用"|"换行:\n',
+    confirmCommit: '确认提交?'
+  },
+  skipQuestions: ['scope', 'footer']
+};
+```
+
+`执行 git cz 或者 yarn commit 提交代码`
+
+### 配置 自定义 commitizen 提交规范(git-cz 适配器)
+
+`安装依赖`
+
+```
+pnpm i git-cz -D
+```
+
+`修改package.json`
+
+```
+// package.json
+"scripts": {
+  ...,
+  "commit": "git-cz"
+},
+"config": {
+  "commitizen": {
+    "path": "git-cz"
+  }
+}
+
+```
+
+`新建changelog.config.js`
+
+```
+具体查看 changelog.config.js
+```
+
+`执行 yarn commit 或者 npx git-cz 提交代码`
