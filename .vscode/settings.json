@@ -1,0 +1,16 @@
+{
+  "files.associations": {
+    "*.wxss": "css",
+    "*.wxs": "javascript",
+    "*.wxml": "wxml"
+  },
+  // 保存时修复代码
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true // eslint
+  },
+  "editor.formatOnSave": true, // 是否开启vscode的保存自动格式化
+  "easysass.compileAfterSave": false, // 启用或禁用easysass
+  "less.compile": {
+    "out": false // 启用或禁用easyless
+  }
+}

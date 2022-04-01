@@ -1,0 +1,66 @@
+.flex {
+  display: flex;
+}
+
+// 水平居中
+.justify-center {
+  @extend .flex;
+
+  justify-content: center;
+}
+
+// 水平居左
+.justify-start {
+  @extend .flex;
+
+  justify-content: flex-start;
+}
+
+// 水平居右
+.justify-end {
+  @extend .flex;
+
+  justify-content: flex-end;
+}
+
+// 水平两端对齐
+.justify-space-between {
+  @extend .flex;
+
+  justify-content: space-between;
+}
+
+// 垂直居中
+.align-center {
+  @extend .flex;
+
+  justify-content: center;
+  align-items: center;
+}
+
+// 垂直水平都居中
+.flex-center {
+  @extend .flex;
+
+  justify-content: space-between;
+}
+
+// 水平两端对齐
+.flex-column {
+  @extend .flex;
+
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+// 水平两端对齐, 垂直居中
+.align-center-justify {
+  @extend .flex;
+
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-1 {
+  flex: 1;
+}

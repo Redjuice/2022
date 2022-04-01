@@ -1,0 +1,24 @@
+@function rpx($args) {
+  @return $args * 2rpx;
+}
+
+// $multiple: 2;
+// // 转换函数 (15) ==> 30rpx (15,30) ==> 30rpx 60rpx
+// // 转换函数 params 可传参数 无上限
+// @function cover($t...) {
+//   $i:1;
+//   $result:0;
+
+//   @while $i <= length($t) {
+//     @if ($i == 1) {
+//       $result: (nth($t, $i) * $multiple);
+//     }
+
+//     @else {
+//       $result: append($result, (nth($t, $i) * $multiple));
+//     }
+//     $i: $i + 1;
+//   }
+
+//   @return $result * 1rpx;
+// }
