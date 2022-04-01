@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": ".eslintrc.js",
-  "scripts": {},
+  "scripts": {
+    "env:dev": "node env.js --dev",
+    "env:uat": "node env.js --uat",
+    "env:prod": "node env.js --prod"
+  },
   "author": "",
   "license": "ISC"
 }
