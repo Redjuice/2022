@@ -1,10 +1,47 @@
 {
-  "pages": ["pages/index/index", "pages/logs/logs"],
+  "pages": [
+    "pages/index/index",
+    "pages/goods/goods",
+    "pages/shop-cart/shop-cart",
+    "pages/my/my"
+  ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "Weixin",
     "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#808080",
+    "selectedColor": "#000000",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "./images/tab-icons/index-off.png",
+        "selectedIconPath": "./images/tab-icons/index-on.png"
+      },
+      {
+        "pagePath": "pages/goods/goods",
+        "text": "直播",
+        "iconPath": "./images/tab-icons/goods-off.png",
+        "selectedIconPath": "./images/tab-icons/goods-on.png"
+      },
+      {
+        "pagePath": "pages/shop-cart/shop-cart",
+        "text": "购物车",
+        "iconPath": "./images/tab-icons/shop-cart-off.png",
+        "selectedIconPath": "./images/tab-icons/shop-cart-on.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "./images/tab-icons/my-off.png",
+        "selectedIconPath": "./images/tab-icons/my-on.png"
+      }
+    ]
   },
   "useExtendedLib": {
     "weui": true
