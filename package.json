@@ -6,6 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
+    "ls-lint": "ls-lint",
     "commit": "git add . && git cz"
   },
   "dependencies": {
@@ -20,6 +21,7 @@
     "@babel/eslint-parser": "^7.12.16",
     "@commitlint/cli": "^16.2.3",
     "@commitlint/config-conventional": "^16.2.1",
+    "@ls-lint/ls-lint": "^1.11.0",
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-eslint": "~5.0.0",
     "@vue/cli-plugin-router": "~5.0.0",
@@ -42,7 +44,7 @@
     "vue-template-compiler": "^2.6.14"
   },
   "gitHooks": {
-    "pre-commit": "lint-staged",
+    "pre-commit": "ls-lint && lint-staged",
     "commit-msg": "commitlint -e $GIT_PARAMS"
   },
   "lint-staged": {

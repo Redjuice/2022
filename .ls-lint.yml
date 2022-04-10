@@ -1,0 +1,10 @@
+ls:
+  .vue: PascalCase | regex:^index
+
+src:
+  .js: kebab-case
+
+ignore:
+  - dist
+  - .git
+  - node_modules
