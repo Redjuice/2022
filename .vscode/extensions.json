@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "octref.vetur", // vetur: 针对vue2的插件
+    "dbaeumer.vscode-eslint", // eslint: 可组装的JavaScript和JSX检查工具
+    "esbenp.prettier-vscode", // prettier: 代码格式化工具
+    "stylelint.vscode-stylelint" // stylelint: css代码规范工具, 请安装这个版本-v0.87.6
+  ]
+}
