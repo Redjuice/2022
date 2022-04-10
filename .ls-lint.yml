@@ -1,11 +1,11 @@
 ls:
   .vue: PascalCase | regex:^index
 
-src:
-  .js: kebab-case
+  src:
+    .js: kebab-case
 
-src/components:
-  .dir: PascalCase # 组件文件夹名命名模式
+  src/components:
+    .dir: PascalCase | camelCase # 组件文件夹名命名模式
 
 ignore:
   - dist
